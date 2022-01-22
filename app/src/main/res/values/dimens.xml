@@ -14,4 +14,14 @@
     <dimen name="dim_margin_big">32dp</dimen>
     <dimen name="dim_margin_really_big">42dp</dimen>
 
+    <!-- Cards -->
+    <dimen name="dim_card_elevation">0dp</dimen>
+    <dimen name="dim_card_elevation_big">0dp</dimen>
+    <dimen name="dim_card_elevation_medium">0dp</dimen>
+    <dimen name="dim_card_corner_radius">16dp</dimen>
+    <dimen name="dim_corner_radius_small">8dp</dimen>
+    <dimen name="dim_tabs_elevation">0dp</dimen>
+    <dimen name="dim_avatar_size">140dp</dimen>
+    <dimen name="dim_filter_row_height">36dp</dimen>
+
 </resources>
