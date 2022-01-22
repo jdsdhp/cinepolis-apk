@@ -30,6 +30,11 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun subscribeUI() {
         //TODO("Not yet implemented")
     }
@@ -38,8 +43,4 @@ class LoginFragment : Fragment() {
         //TODO("Not yet implemented")
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

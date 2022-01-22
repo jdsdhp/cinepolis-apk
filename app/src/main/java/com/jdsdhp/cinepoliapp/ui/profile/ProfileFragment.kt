@@ -23,17 +23,22 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-
-        viewModel.text.observe(viewLifecycleOwner) {
-            binding.textDashboard.text = it
-        }
-
+        initUI()
+        subscribeUI()
         return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun subscribeUI() {
+        //TODO("Not yet implemented")
+    }
+
+    private fun initUI() {
+        //TODO("Not yet implemented")
     }
 
 }
