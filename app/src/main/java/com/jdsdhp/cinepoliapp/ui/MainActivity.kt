@@ -1,12 +1,10 @@
-package com.jdsdhp.cinepoliapp
+package com.jdsdhp.cinepoliapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.jdsdhp.cinepoliapp.R
 import com.jdsdhp.cinepoliapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
