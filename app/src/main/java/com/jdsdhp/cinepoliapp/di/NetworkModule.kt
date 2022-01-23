@@ -55,7 +55,6 @@ internal object NetworkModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-        hostnameVerifier: HostnameVerifier,
         dispatcher: Dispatcher,
         loggingInterceptor: HttpLoggingInterceptor,
         interceptor: Interceptor,
@@ -64,7 +63,6 @@ internal object NetworkModule {
         .connectTimeout(TIME_OUT_CONNECT, TimeUnit.SECONDS)
         .writeTimeout(TIME_OUT_WRITE, TimeUnit.SECONDS)
         .readTimeout(TIME_OUT_READ, TimeUnit.SECONDS)
-        .hostnameVerifier(hostnameVerifier)
         .dispatcher(dispatcher)
         .addInterceptor(interceptor)
         .apply {
@@ -88,7 +86,7 @@ internal object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideInterceptor(appDataStore: AppDataStore, basicHeaders: Array<Header>): Interceptor =
+    fun provideInterceptor(dataStore: AppDataStore, basicHeaders: Array<Header>): Interceptor =
         Interceptor { chain ->
             chain.proceed(
                 chain.request().newBuilder()
@@ -102,7 +100,9 @@ internal object NetworkModule {
                         if (!url.contains(URL_LOGIN)
                         //TODO: Add the other endpoints without token.
                         ) {
-                            //TODO: Code this.
+                            dataStore.provideAccessToken()?.let {
+                                addHeader("Authorization", "Bearer $it")
+                            }
                         }
                     }
                     .build()

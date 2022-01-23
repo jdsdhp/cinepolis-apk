@@ -13,4 +13,12 @@ internal interface AppDataStore {
 
     fun provideProfile(): Profile?
 
+    suspend fun saveAccessToken(token: String)
+
+    suspend fun saveRefreshToken(refreshToken: String)
+
+    fun provideAccessToken(): String?
+
+    fun provideRefreshToken(): String?
+
 }
