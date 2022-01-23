@@ -6,4 +6,10 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="continue_text">Continue</string>
+    <string name="loading">Loading…</string>
+    <string name="error">Error</string>
+    <string name="accept">Accept</string>
+    <string name="required_field">Required field.</string>
+    <string name="invalid_email_error">Invalid email address.</string>
+    <string name="password_length_error">Password too short.</string>
 </resources>
