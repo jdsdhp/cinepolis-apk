@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/login_fragment">
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.jdsdhp.cinepoliapp.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/login_fragment_to_main_fragment"
+            app:destination="@id/main_fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.jdsdhp.cinepoliapp.ui.main.MainFragment"
+        tools:layout="@layout/fragment_main" />
+
+</navigation>

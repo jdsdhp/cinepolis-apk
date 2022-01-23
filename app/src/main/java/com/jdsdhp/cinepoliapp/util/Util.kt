@@ -16,8 +16,3 @@ fun String.isValidEmail(): Boolean = Pattern
     .compile("^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
     .matcher(this)
     .matches()
-
-fun String.isValidName(): Boolean = Pattern
-    .compile("^(?!\\s*$)[-a-zñáéíóúA-ZÑÁÉÍÓÚ. ]*$")
-    .matcher(this)
-    .matches()

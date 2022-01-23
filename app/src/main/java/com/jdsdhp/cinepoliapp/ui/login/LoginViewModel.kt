@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-data class LoginUiState(
+internal data class LoginUiState(
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
     val isUserLoggedIn: Boolean = false

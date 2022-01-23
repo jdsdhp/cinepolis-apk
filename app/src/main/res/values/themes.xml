@@ -58,6 +58,8 @@
     </style>
 
     <!--Toolbar-->
+    <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface" />
+
     <style name="Toolbar.BackAction" parent="Widget.MaterialComponents.Toolbar.Surface">
         <item name="navigationIcon">@drawable/ic_round_arrow_back_24</item>
     </style>

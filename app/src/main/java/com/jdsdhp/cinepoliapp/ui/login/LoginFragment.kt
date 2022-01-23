@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import com.github.razir.progressbutton.*
+import androidx.navigation.fragment.findNavController
+import com.github.razir.progressbutton.DrawableButton
+import com.github.razir.progressbutton.bindProgressButton
+import com.github.razir.progressbutton.hideProgress
+import com.github.razir.progressbutton.showProgress
 import com.jdsdhp.cinepoliapp.R
 import com.jdsdhp.cinepoliapp.databinding.FragmentLoginBinding
 import com.jdsdhp.cinepoliapp.util.hideSoftKeyboard
@@ -47,36 +49,35 @@ class LoginFragment : Fragment() {
 
     private fun subscribeUI() {
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.uiState.collect { uiState ->
-                    when {
-                        uiState.isLoading -> {
-                            binding.submitBtn.run {
-                                showProgress {
-                                    buttonTextRes = R.string.loading
-                                    gravity = DrawableButton.GRAVITY_TEXT_END
-                                    textMarginRes = R.dimen.dim_margin_small
-                                    progressColor = currentTextColor
-                                }
-                            }
+            viewModel.uiState.collect { uiState ->
+                when {
+                    uiState.isLoading -> binding.submitBtn.run {
+                        showProgress {
+                            isEnabled = false
+                            buttonTextRes = R.string.loading
+                            gravity = DrawableButton.GRAVITY_TEXT_END
+                            textMarginRes = R.dimen.dim_margin_small
+                            progressColor = currentTextColor
                         }
-                        !uiState.errorMessage.isNullOrBlank() -> {
-                            binding.submitBtn.hideProgress(R.string.continue_text)
-                            InfoSheet().show(requireActivity()) {
-                                drawable(R.drawable.ic_round_error_24)
-                                drawableColor(R.color.colorError)
-                                cancelableOutside(false)
-                                title(R.string.error)
-                                content(uiState.errorMessage)
-                                displayNegativeButton(false)
-                                onPositive(R.string.accept)
-                            }
+                    }
+                    !uiState.errorMessage.isNullOrBlank() -> {
+                        binding.submitBtn.run {
+                            hideProgress(R.string.continue_text)
+                            isEnabled = true
                         }
-                        uiState.isUserLoggedIn -> {
-                            binding.submitBtn.hideProgress(R.string.continue_text)
-                            Toast.makeText(requireContext(), "Login success!", Toast.LENGTH_SHORT)
-                                .show()
+                        InfoSheet().show(requireActivity()) {
+                            drawable(R.drawable.ic_round_error_24)
+                            drawableColor(R.color.colorError)
+                            cancelableOutside(false)
+                            title(R.string.error)
+                            content(uiState.errorMessage)
+                            displayNegativeButton(false)
+                            onPositive(R.string.accept)
                         }
+                    }
+                    uiState.isUserLoggedIn -> {
+                        binding.submitBtn.hideProgress(R.string.continue_text)
+                        findNavController().navigate(LoginFragmentDirections.loginFragmentToMainFragment())
                     }
                 }
             }
@@ -87,13 +88,14 @@ class LoginFragment : Fragment() {
         submitBtn.run {
             viewLifecycleOwner.bindProgressButton(this)
             setOnClickListener {
+                isEnabled = false
                 requireActivity().hideSoftKeyboard()
-
-                if (!this.isProgressActive()) {
-                    if (isInputValid()) viewModel.sendLogin(
-                        email = inputEmail.text.toString().trim(),
-                        password = passwordInput.text.toString().trim(),
-                    ) else hideProgress(R.string.continue_text)
+                if (isInputValid()) viewModel.sendLogin(
+                    email = inputEmail.text.toString().trim(),
+                    password = passwordInput.text.toString().trim(),
+                ) else {
+                    hideProgress(R.string.continue_text)
+                    isEnabled = true
                 }
             }
         }
