@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
@@ -20,7 +21,7 @@ class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MainViewModel by viewModels()
+    //private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +30,7 @@ class MainFragment : Fragment() {
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         initUI()
-        subscribeUI()
+        //subscribeUI()
         return binding.root
     }
 
@@ -42,9 +43,12 @@ class MainFragment : Fragment() {
             binding.bottomNavigation.run {
                 setupWithNavController(navController)
                 setOnItemSelectedListener { menuItem ->
-                    (menuItem.itemId != selectedItemId).apply {
+                    if (menuItem.itemId != selectedItemId) {
+                        navController.navigate(menuItem.itemId)
                         binding.toolbar.title = menuItem.title
+                        true
                     }
+                    else false
                 }
             }
         }
@@ -55,9 +59,9 @@ class MainFragment : Fragment() {
         _binding = null
     }
 
-    private fun subscribeUI() {
+    /*private fun subscribeUI() {
         //TODO Code this.
-    }
+    }*/
 
     private fun getNavHostController(): NavController? =
         childFragmentManager.findFragmentById(R.id.nav_host_main)?.findNavController()

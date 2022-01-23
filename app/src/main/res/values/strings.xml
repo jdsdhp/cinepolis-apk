@@ -12,4 +12,10 @@
     <string name="required_field">Required field.</string>
     <string name="invalid_email_error">Invalid email address.</string>
     <string name="password_length_error">Password too short.</string>
+    <string name="welcome">Welcome</string>
+    <string name="personal">Personal Data</string>
+    <string name="name">Nombre</string>
+    <string name="card">Card</string>
+    <string name="no_profile_found_error">The profile cannot be found. Please log in again.</string>
+    <string name="last_name">Last Name</string>
 </resources>

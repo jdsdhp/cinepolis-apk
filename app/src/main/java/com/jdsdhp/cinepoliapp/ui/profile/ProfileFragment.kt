@@ -6,8 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.jdsdhp.cinepoliapp.R
+import com.jdsdhp.cinepoliapp.data.store.model.Profile
 import com.jdsdhp.cinepoliapp.databinding.FragmentProfileBinding
+import com.maxkeppeler.sheets.info.InfoSheet
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private val viewModel: ProfileViewModel by viewModels()
@@ -34,11 +41,44 @@ class ProfileFragment : Fragment() {
     }
 
     private fun subscribeUI() {
-        //TODO("Not yet implemented")
+        lifecycleScope.launch {
+            viewModel.uiState.collect { uiState ->
+                when {
+                    uiState.isLoading -> binding.swipeLayout.isRefreshing = true
+                    !uiState.errorMessage.isNullOrBlank() ->
+                        binding.swipeLayout.isRefreshing = false
+                    uiState.isLoadSuccess -> binding.swipeLayout.isRefreshing = false
+                }
+            }
+        }
+        viewModel.profile.observe(viewLifecycleOwner) {
+            it?.let { it1 -> setData(it1) } ?: run {
+                InfoSheet().show(requireActivity()) {
+                    drawable(R.drawable.ic_round_error_24)
+                    drawableColor(R.color.colorError)
+                    cancelableOutside(false)
+                    title(R.string.error)
+                    content(R.string.no_profile_found_error)
+                    displayNegativeButton(false)
+                    onPositive(R.string.accept)
+                }
+            }
+        }
     }
 
     private fun initUI() {
-        //TODO("Not yet implemented")
+        binding.swipeLayout.setOnRefreshListener {
+            viewModel.refreshData()
+        }
+    }
+
+    private fun setData(profile: Profile) {
+        binding.run {
+            inputName.setText(profile.name)
+            inputLastName.setText(profile.lastName)
+            inputEmail.setText(profile.email)
+            inputCard.setText(profile.cardNumber)
+        }
     }
 
 }
