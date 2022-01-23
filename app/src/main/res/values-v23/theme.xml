@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme. -->
+
     <style name="Base.Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
         <item name="android:statusBarColor">@color/colorBackground</item>
 
         <!--App Colors-->
@@ -36,11 +39,6 @@
         <!--Sheets-->
         <item name="sheetsTextInputLayoutCornerRadius">@dimen/dim_corner_radius_small</item>
 
-    </style>
-
-    <style name="Theme.App" parent="Base.Theme.App">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>

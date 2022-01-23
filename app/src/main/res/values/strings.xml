@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">Cinepolis App</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="profile">Profile</string>
+    <string name="movies">Movies</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="continue_text">Continue</string>
+    <string name="loading">Loading…</string>
+    <string name="error">Error</string>
+    <string name="accept">Accept</string>
+    <string name="required_field">Required field.</string>
+    <string name="invalid_email_error">Invalid email address.</string>
+    <string name="password_length_error">Password too short.</string>
+    <string name="welcome">Welcome</string>
+    <string name="personal">Personal Data</string>
+    <string name="name">Nombre</string>
+    <string name="card">Card</string>
+    <string name="no_profile_found_error">The profile cannot be found. Please log in again.</string>
+    <string name="last_name">Last Name</string>
 </resources>

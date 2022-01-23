@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/dim_padding_small">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatar_image"
+                android:layout_width="@dimen/dim_avatar_size"
+                android:layout_height="@dimen/dim_avatar_size"
+                android:layout_marginHorizontal="@dimen/dim_margin_medium"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:padding="@dimen/dim_padding_very_small"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_avatar"
+                app:shapeAppearanceOverlay="@style/CircleImageView.Overlay"
+                app:strokeColor="?attr/colorControlNormal"
+                app:strokeWidth="@dimen/dim_padding_very_small" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/email_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_margin"
+                android:layout_marginBottom="@dimen/dim_margin_small"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="@dimen/dim_padding_big"
+                android:paddingEnd="@dimen/dim_padding_big"
+                android:text="@string/welcome"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dim_margin_small"
+                app:contentPadding="@dimen/dim_padding">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/personal_label_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_name_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dim_margin"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/personal_label_view"
+                        app:startIconDrawable="@drawable/ic_round_person_24">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:inputType="none"
+                            android:maxLength="100" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_last_name_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dim_margin"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/last_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/input_name_layout"
+                        app:startIconDrawable="@drawable/ic_round_person_24">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:inputType="none"
+                            android:maxLength="100" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_email_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dim_margin"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/email"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/input_last_name_layout"
+                        app:startIconDrawable="@drawable/ic_round_alternate_email_24">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:inputType="none"
+                            android:maxLength="100" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_card_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dim_margin"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/card"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/input_email_layout"
+                        app:startIconDrawable="@drawable/ic_round_payment_24">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:inputType="none"
+                            android:maxLength="50" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
