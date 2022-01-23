@@ -37,7 +37,7 @@ internal class LoginViewModel @Inject constructor(
                     it.copy(
                         isLoading = false,
                         errorMessage = null,
-                        isUserLoggedIn = true
+                        isUserLoggedIn = true,
                     )
                 }
             }
