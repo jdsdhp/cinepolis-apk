@@ -1,26 +1,20 @@
-package com.jdsdhp.cinepoliapp.data.store.model
+package com.jdsdhp.cinepoliapp.data.api.mappers
 
 import com.google.gson.annotations.SerializedName
 
-data class CinemaListing(
-    @SerializedName("movies") val movies: List<Movie>,
-    @SerializedName("routes") val routes: List<Route>
+data class MoviesWrapper(
+    @SerializedName("movies") val movieRes: List<MovieRes>,
+    @SerializedName("routes") val routeRes: List<RouteRes>
 )
 
-data class Media(
-    @SerializedName("code") val code: String,
-    @SerializedName("resource") val resource: String,
-    @SerializedName("type") val type: String,
-)
-
-data class Movie(
+data class MovieRes(
     @SerializedName("categories") val categories: List<String>,
     @SerializedName("cinemas") val cinemas: List<Int>,
     @SerializedName("code") val code: String,
     @SerializedName("genre") val genre: String,
     @SerializedName("id") val id: Int,
     @SerializedName("length") val length: String,
-    @SerializedName("media") val media: List<Media>,
+    @SerializedName("media") val mediaRes: List<MediaRes>,
     @SerializedName("name") val name: String,
     @SerializedName("original_name") val originalName: String,
     @SerializedName("position") val position: Int,
@@ -29,12 +23,18 @@ data class Movie(
     @SerializedName("synopsis") val synopsis: String,
 )
 
-data class Route(
+data class RouteRes(
     @SerializedName("code") val code: String,
-    @SerializedName("sizes") val sizes: Sizes,
+    @SerializedName("sizes") val sizesRes: SizesRes,
 )
 
-data class Sizes(
+data class MediaRes(
+    @SerializedName("code") val code: String,
+    @SerializedName("resource") val resource: String,
+    @SerializedName("type") val type: String,
+)
+
+data class SizesRes(
     @SerializedName("large") val large: String,
     @SerializedName("medium") val medium: String,
     @SerializedName("small") val small: String,
