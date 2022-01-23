@@ -86,18 +86,29 @@
     </style>
 
     <!--TextInputLayout-->
-    <style name="textInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="textInputStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="boxCornerRadiusBottomStart">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusTopStart">@dimen/dim_corner_radius_small</item>
+        <item name="boxBackgroundColor">?attr/colorControlNormal</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
     </style>
 
-    <style name="dropdownTextViewStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+    <style name="dropdownTextViewStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
         <item name="boxCornerRadiusBottomStart">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusTopStart">@dimen/dim_corner_radius_small</item>
+        <item name="boxBackgroundColor">?attr/colorControlNormal</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+    </style>
+
+    <style name="CircleImageView.Overlay" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
 </resources>
