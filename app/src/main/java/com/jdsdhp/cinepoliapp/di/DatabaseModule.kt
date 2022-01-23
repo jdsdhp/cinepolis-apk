@@ -24,18 +24,9 @@ internal object DatabaseModule {
     internal fun provideLocationDao(database: AppDatabase): LocationDao = database.locationDao()
 
     @Provides
-    internal fun provideMediaDao(database: AppDatabase): MediaDao = database.mediaDao()
-
-    @Provides
     internal fun provideMovieDao(database: AppDatabase): MovieDao = database.movieDao()
 
     @Provides
     internal fun provideRouteDao(database: AppDatabase): RouteDao = database.routeDao()
-
-    @Provides
-    internal fun provideSettingsDao(database: AppDatabase): SettingsDao = database.settingsDao()
-
-    @Provides
-    internal fun provideSizesDao(database: AppDatabase): SizesDao = database.sizesDao()
 
 }
