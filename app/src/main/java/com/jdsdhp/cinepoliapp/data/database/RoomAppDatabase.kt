@@ -6,10 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.jdsdhp.cinepoliapp.data.database.RoomAppDatabase.Companion.DB_VERSION
-import com.jdsdhp.cinepoliapp.data.store.model.*
+import com.jdsdhp.cinepoliapp.data.database.model.Location
+import com.jdsdhp.cinepoliapp.data.database.model.Movie
+import com.jdsdhp.cinepoliapp.data.database.model.Route
 
 @Database(
-    entities = [Location::class, Media::class, Movie::class, Route::class, Settings::class, Sizes::class],
+    entities = [Location::class, Movie::class, Route::class],
     version = DB_VERSION,
     exportSchema = false,
 )
