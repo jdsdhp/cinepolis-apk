@@ -20,8 +20,15 @@
     <dimen name="dim_card_elevation_medium">0dp</dimen>
     <dimen name="dim_card_corner_radius">16dp</dimen>
     <dimen name="dim_corner_radius_small">8dp</dimen>
+    <dimen name="dim_corner_radius_medium">16dp</dimen>
+    <dimen name="dim_corner_radius_large">24dp</dimen>
     <dimen name="dim_tabs_elevation">0dp</dimen>
     <dimen name="dim_avatar_size">100dp</dimen>
     <dimen name="dim_filter_row_height">36dp</dimen>
+    <dimen name="dim_movie_height">180dp</dimen>
+    <dimen name="dim_bar_divider_size">32dp</dimen>
+    <dimen name="dim_avatar_small_size">56dp</dimen>
+    <dimen name="dim_small_icon_size">18dp</dimen>
+    <dimen name="dim_detail_icon_size">48dp</dimen>
 
 </resources>

@@ -2,10 +2,8 @@ package com.jdsdhp.cinepoliapp.di
 
 import com.jdsdhp.cinepoliapp.data.api.ApiService
 import com.jdsdhp.cinepoliapp.data.api.RequestHandler
-import com.jdsdhp.cinepoliapp.data.repository.AuthRepo
-import com.jdsdhp.cinepoliapp.data.repository.AuthRepoImpl
-import com.jdsdhp.cinepoliapp.data.repository.ProfileRepo
-import com.jdsdhp.cinepoliapp.data.repository.ProfileRepoImpl
+import com.jdsdhp.cinepoliapp.data.database.dao.MovieDao
+import com.jdsdhp.cinepoliapp.data.repository.*
 import com.jdsdhp.cinepoliapp.data.store.AppDataStore
 import dagger.Module
 import dagger.Provides
@@ -39,6 +37,28 @@ internal object RepositoryModule {
         service = service,
         requestHandler = requestHandler,
         dataStore = dataStore,
+    )
+
+    @Singleton
+    @Provides
+    fun provideMovieRepository(
+        service: ApiService,
+        requestHandler: RequestHandler,
+        movieDao: MovieDao,
+    ): MovieRepo = MovieRepoImpl(
+        service = service,
+        requestHandler = requestHandler,
+        movieDao = movieDao,
+    )
+
+    @Singleton
+    @Provides
+    fun provideLoyaltyRepository(
+        service: ApiService,
+        requestHandler: RequestHandler,
+    ): LoyaltyRepo = LoyaltyRepoImpl(
+        service = service,
+        requestHandler = requestHandler,
     )
 
 }

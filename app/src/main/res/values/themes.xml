@@ -86,29 +86,35 @@
     </style>
 
     <!--TextInputLayout-->
-    <style name="textInputStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <style name="textInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusBottomStart">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusTopStart">@dimen/dim_corner_radius_small</item>
-        <item name="boxBackgroundColor">?attr/colorControlNormal</item>
-        <item name="boxStrokeWidth">0dp</item>
-        <item name="boxStrokeWidthFocused">0dp</item>
     </style>
 
-    <style name="dropdownTextViewStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+    <style name="dropdownTextViewStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="boxCornerRadiusBottomStart">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dim_corner_radius_small</item>
         <item name="boxCornerRadiusTopStart">@dimen/dim_corner_radius_small</item>
-        <item name="boxBackgroundColor">?attr/colorControlNormal</item>
-        <item name="boxStrokeWidth">0dp</item>
-        <item name="boxStrokeWidthFocused">0dp</item>
     </style>
 
     <style name="CircleImageView.Overlay" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundBottomImageView.Overlay" parent="">
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">@dimen/dim_corner_radius_large</item>
+        <item name="cornerSizeBottomRight">@dimen/dim_corner_radius_large</item>
+    </style>
+
+    <style name="RoundedImageView.Overlay" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dim_card_corner_radius</item>
     </style>
 
 </resources>

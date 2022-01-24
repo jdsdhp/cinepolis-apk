@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         val currentDestination = findNavController(R.id.nav_host).currentDestination
-        if (currentDestination?.id == R.id.login_fragment || currentDestination?.id == R.id.main_fragment) {
+        if (currentDestination?.id == R.id.main_fragment) {
             finish()
             return
         }

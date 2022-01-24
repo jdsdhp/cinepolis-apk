@@ -38,7 +38,7 @@ android {
             applicationIdSuffix ".debug"
         }
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -128,8 +128,8 @@ dependencies {
     //Paging
     implementation 'androidx.paging:paging-runtime-ktx:3.1.0'
 
-    //Picasso
-    implementation 'com.squareup.picasso:picasso:2.71828'
+    //Coil
+    implementation "io.coil-kt:coil:1.4.0"
 
     //UI
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -138,14 +138,16 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
-    implementation 'com.facebook.shimmer:shimmer:0.5.0'
     implementation 'com.github.razir.progressbutton:progressbutton:2.1.0'
     implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
+    implementation 'com.google.android.exoplayer:exoplayer:2.16.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.16.1'
 
     def sheets_version = '2.2.6'
     implementation "com.maxkeppeler.sheets:core:$sheets_version"
     implementation "com.maxkeppeler.sheets:lottie:$sheets_version"
     implementation "com.maxkeppeler.sheets:info:$sheets_version"
+    implementation "com.maxkeppeler.sheets:input:$sheets_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

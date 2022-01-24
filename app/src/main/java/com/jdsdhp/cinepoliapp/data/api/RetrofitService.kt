@@ -1,12 +1,12 @@
 package com.jdsdhp.cinepoliapp.data.api
 
 import com.jdsdhp.cinepoliapp.data.api.mappers.LoginResponse
+import com.jdsdhp.cinepoliapp.data.api.mappers.LoyaltyBody
+import com.jdsdhp.cinepoliapp.data.api.mappers.LoyaltyResponse
+import com.jdsdhp.cinepoliapp.data.api.mappers.MoviesWrapper
 import com.jdsdhp.cinepoliapp.data.store.model.Profile
 import retrofit2.Response
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 internal interface RetrofitService : ApiService {
 
@@ -23,5 +23,11 @@ internal interface RetrofitService : ApiService {
 
     @GET(URL_PROFILE)
     override suspend fun fetchProfile(): Response<Profile?>
+
+    @GET(URL_MOVIES)
+    override suspend fun fetchMovies(): Response<MoviesWrapper>
+
+    @POST(URL_LOYALTY)
+    override suspend fun fetchLoyalty(@Body loyaltyBody: LoyaltyBody): Response<LoyaltyResponse>
 
 }

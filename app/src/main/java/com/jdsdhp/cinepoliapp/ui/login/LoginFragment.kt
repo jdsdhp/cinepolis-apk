@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -27,8 +26,6 @@ class LoginFragment : Fragment() {
     private val viewModel: LoginViewModel by viewModels()
     private var _binding: FragmentLoginBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -71,8 +68,10 @@ class LoginFragment : Fragment() {
                             cancelableOutside(false)
                             title(R.string.error)
                             content(uiState.errorMessage)
-                            displayNegativeButton(false)
                             onPositive(R.string.accept)
+                            onNegative(R.string.offline_mode) {
+                                findNavController().navigate(LoginFragmentDirections.loginFragmentToMainFragment())
+                            }
                         }
                     }
                     uiState.isUserLoggedIn -> {
@@ -98,6 +97,10 @@ class LoginFragment : Fragment() {
                     isEnabled = true
                 }
             }
+        }
+        passwordInput.setOnEditorActionListener { _, _, _ ->
+            submitBtn.callOnClick()
+            true
         }
     }
 

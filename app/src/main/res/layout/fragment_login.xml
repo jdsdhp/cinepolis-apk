@@ -52,7 +52,6 @@
                 android:hint="@string/email"
                 app:startIconDrawable="@drawable/ic_round_alternate_email_24">
 
-                <!--TODO: Remove text. Just for test.-->
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_email"
                     android:layout_width="match_parent"
@@ -60,7 +59,6 @@
                     android:inputType="textEmailAddress"
                     android:maxLength="100"
                     android:maxLines="1"
-                    android:text="pruebas_beto_ia@yahoo.com"
                     tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -74,7 +72,6 @@
                 app:passwordToggleEnabled="true"
                 app:startIconDrawable="@drawable/ic_round_lock_24">
 
-                <!--TODO: Remove text. Just for test.-->
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_input"
                     style="?attr/textAppearanceBody1"
@@ -84,7 +81,6 @@
                     android:inputType="textPassword"
                     android:maxLength="50"
                     android:maxLines="1"
-                    android:text="Pruebas01"
                     tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -102,17 +98,18 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher_background"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/card_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CircleImageView.Overlay"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        app:tint="@color/colorOnSurface"
         tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

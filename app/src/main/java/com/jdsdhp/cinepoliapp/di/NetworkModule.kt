@@ -25,7 +25,7 @@ import javax.net.ssl.HostnameVerifier
 @InstallIn(SingletonComponent::class)
 internal object NetworkModule {
 
-    private const val BASE_URL = "https://stage-api.cinepolis.com"
+    private const val BASE_URL = "http://aws-ami-api.cinepolis.com"
     private const val MAX_REQUEST_COUNT = 5
     private const val TIME_OUT_CONNECT = 25L
     private const val TIME_OUT_WRITE = 25L
