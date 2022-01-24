@@ -1,0 +1,36 @@
+<resources>
+    <string name="profile">Perfil</string>
+    <string name="movies">Películas</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="continue_text">Continuar</string>
+    <string name="loading">Cargando…</string>
+    <string name="error">Error</string>
+    <string name="accept">Aceptar</string>
+    <string name="required_field">Campo requerido.</string>
+    <string name="invalid_email_error">Email inválido.</string>
+    <string name="password_length_error">Contraseña demasiado corta.</string>
+    <string name="personal">Datos Personales</string>
+    <string name="name">Nombre</string>
+    <string name="card">Tarjeta</string>
+    <string name="no_profile_found_error">No se puede encontrar el perfil. Inicie sesión de nuevo.</string>
+    <string name="last_name">Apellidos</string>
+    <string name="share">Compartir</string>
+    <string name="synopsis">Sinopsis</string>
+    <string name="duration">Duración</string>
+    <string name="genre">Género</string>
+    <string name="classification">Clasificación</string>
+    <string name="images">Imágenes</string>
+    <string name="full_name">Nombre Completo</string>
+    <string name="no_loyalty_data_found">No se pueden encontrar datos para mostrar.</string>
+    <string name="card_number">Número de Tarjeta</string>
+    <string name="check_transactions">Comprobar Transacciones</string>
+    <string name="cancel">Cancelar</string>
+    <string name="check">Comprobar</string>
+    <string name="country_code">Código de País</string>
+    <string name="just_two_characters_error">Solo se permiten dos caracteres.</string>
+    <string name="pin">Pin</string>
+    <string name="no_available">No disponible</string>
+    <string name="offline_mode">Modo Offline</string>
+</resources>
