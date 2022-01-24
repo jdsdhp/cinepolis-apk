@@ -7,11 +7,17 @@
 
 Cinepolis demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.
 
-## Screenshots
+## Screenshots (Light)
 
-Login Screen | Movies Screen | Movie Detail Screen | Transactions Screen
+Splash Screen | Login Screen | Movies Screen | Movie Detail Screen | Transactions Screen
 :-:|:-:|:-:|:-:|:-:
-![](art/art-01.jpg) | ![](art/art-02.jpg) | ![](art/art-03.jpg) | ![](art/art-04.jpg)
+![](art/art-01.jpg) | ![](art/art-02.jpg) | ![](art/art-03.jpg) | ![](art/art-04.jpg) | ![](art/art-05.jpg)
+
+## Screenshots (Dark)
+
+Splash Screen | Login Screen | Movies Screen | Movie Detail Screen | Transactions Screen
+:-:|:-:|:-:|:-:|:-:
+![](art/art-01-dark.jpg) | ![](art/art-02-dark.jpg) | ![](art/art-03-dark.jpg) | ![](art/art-04-dark.jpg) | ![](art/art-05-dark.jpg)
 
 ## Download
 Go to the [Releases](https://github.com/jdsdhp/cinepolis-apk/releases) to download the latest APK.
@@ -42,6 +48,10 @@ Go to the [Releases](https://github.com/jdsdhp/cinepolis-apk/releases) to downlo
 Cinepolis is based on the MVVM architecture and the Repository pattern.
 
 ![architecture](https://user-images.githubusercontent.com/24237865/77502018-f7d36000-6e9c-11ea-92b0-1097240c8689.png)
+
+## TODO
+- Testing
+- Share movie action.
 
 ## Find this repository useful? :heart:
 Support it by joining __[stargazers](https://github.com/jdsdhp/cinepolis-apk/stargazers)__ for this repository. :star: <br>
