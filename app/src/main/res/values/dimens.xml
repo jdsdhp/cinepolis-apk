@@ -23,5 +23,6 @@
     <dimen name="dim_tabs_elevation">0dp</dimen>
     <dimen name="dim_avatar_size">100dp</dimen>
     <dimen name="dim_filter_row_height">36dp</dimen>
+    <dimen name="dim_movie_height">180dp</dimen>
 
 </resources>
