@@ -138,7 +138,6 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
-    implementation 'com.facebook.shimmer:shimmer:0.5.0'
     implementation 'com.github.razir.progressbutton:progressbutton:2.1.0'
     implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
     implementation 'com.google.android.exoplayer:exoplayer:2.16.1'
@@ -148,6 +147,7 @@ dependencies {
     implementation "com.maxkeppeler.sheets:core:$sheets_version"
     implementation "com.maxkeppeler.sheets:lottie:$sheets_version"
     implementation "com.maxkeppeler.sheets:info:$sheets_version"
+    implementation "com.maxkeppeler.sheets:input:$sheets_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
