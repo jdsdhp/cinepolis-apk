@@ -51,4 +51,14 @@ internal object RepositoryModule {
         movieDao = movieDao,
     )
 
+    @Singleton
+    @Provides
+    fun provideLoyaltyRepository(
+        service: ApiService,
+        requestHandler: RequestHandler,
+    ): LoyaltyRepo = LoyaltyRepoImpl(
+        service = service,
+        requestHandler = requestHandler,
+    )
+
 }

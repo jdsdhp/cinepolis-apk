@@ -2,9 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/main_fragment">
+    app:startDestination="@id/login_fragment">
 
-    <!--<fragment
+    <fragment
         android:id="@+id/login_fragment"
         android:name="com.jdsdhp.cinepoliapp.ui.login.LoginFragment"
         tools:layout="@layout/fragment_login">
@@ -18,16 +18,25 @@
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
 
-    </fragment>-->
+    </fragment>
 
     <fragment
         android:id="@+id/main_fragment"
         android:name="com.jdsdhp.cinepoliapp.ui.main.MainFragment"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
 
         <action
             android:id="@+id/main_fragment_to_movie_detail_fragment"
             app:destination="@id/movie_detail_fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+        <action
+            android:id="@+id/main_fragment_to_loyalty_fragment"
+            app:destination="@id/loyalty_fragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:launchSingleTop="true"
@@ -39,11 +48,33 @@
     <fragment
         android:id="@+id/movie_detail_fragment"
         android:name="com.jdsdhp.cinepoliapp.ui.movies.detail.MovieDetailFragment"
-        tools:layout="@layout/fragment_movie_detail" >
+        tools:layout="@layout/fragment_movie_detail">
 
         <argument
             android:name="movie"
             app:argType="com.jdsdhp.cinepoliapp.data.database.model.Movie"
+            app:nullable="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/loyalty_fragment"
+        android:name="com.jdsdhp.cinepoliapp.ui.loyalty.LoyaltyFragment"
+        tools:layout="@layout/fragment_loyalty">
+
+        <argument
+            android:name="card_number"
+            app:argType="string"
+            app:nullable="false" />
+
+        <argument
+            android:name="country_code"
+            app:argType="string"
+            app:nullable="false" />
+
+        <argument
+            android:name="pin"
+            app:argType="string"
             app:nullable="false" />
 
     </fragment>

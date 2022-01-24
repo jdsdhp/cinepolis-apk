@@ -4,12 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@+id/navigation_movies">
 
-    <!--<fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.jdsdhp.cinepoliapp.ui.profile.ProfileFragment"
-        android:label="@string/profile"
-        tools:layout="@layout/fragment_profile" />-->
-
     <fragment
         android:id="@+id/navigation_movies"
         android:name="com.jdsdhp.cinepoliapp.ui.movies.MoviesFragment"

@@ -1,6 +1,8 @@
 package com.jdsdhp.cinepoliapp.data.api
 
 import com.jdsdhp.cinepoliapp.data.api.mappers.LoginResponse
+import com.jdsdhp.cinepoliapp.data.api.mappers.LoyaltyBody
+import com.jdsdhp.cinepoliapp.data.api.mappers.LoyaltyResponse
 import com.jdsdhp.cinepoliapp.data.api.mappers.MoviesWrapper
 import com.jdsdhp.cinepoliapp.data.store.model.Profile
 import retrofit2.Response
@@ -24,5 +26,8 @@ internal interface RetrofitService : ApiService {
 
     @GET(URL_MOVIES)
     override suspend fun fetchMovies(): Response<MoviesWrapper>
+
+    @POST(URL_LOYALTY)
+    override suspend fun fetchLoyalty(@Body loyaltyBody: LoyaltyBody): Response<LoyaltyResponse>
 
 }

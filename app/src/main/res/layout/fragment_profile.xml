@@ -27,29 +27,25 @@
                 android:layout_marginTop="?attr/actionBarSize"
                 android:padding="@dimen/dim_padding_very_small"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_avatar"
                 app:shapeAppearanceOverlay="@style/CircleImageView.Overlay"
+                app:srcCompat="@drawable/ic_avatar"
                 app:strokeColor="?attr/colorControlNormal"
                 app:strokeWidth="@dimen/dim_padding_very_small" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/email_label"
-                android:layout_width="match_parent"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loyalty_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dim_margin"
-                android:layout_marginBottom="@dimen/dim_margin_small"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:paddingStart="@dimen/dim_padding_big"
-                android:paddingEnd="@dimen/dim_padding_big"
-                android:text="@string/welcome"
-                android:textAlignment="center"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dim_margin"
+                android:text="@string/check_transactions" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dim_margin_small"
+                android:layout_marginHorizontal="@dimen/dim_margin_small"
+                android:layout_marginBottom="@dimen/dim_margin_small"
                 app:contentPadding="@dimen/dim_padding">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
