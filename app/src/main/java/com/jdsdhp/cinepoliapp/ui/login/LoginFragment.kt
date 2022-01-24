@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -69,14 +68,15 @@ class LoginFragment : Fragment() {
                             cancelableOutside(false)
                             title(R.string.error)
                             content(uiState.errorMessage)
-                            displayNegativeButton(false)
                             onPositive(R.string.accept)
+                            onNegative(R.string.offline_mode) {
+                                findNavController().navigate(LoginFragmentDirections.loginFragmentToMainFragment())
+                            }
                         }
                     }
                     uiState.isUserLoggedIn -> {
                         binding.submitBtn.hideProgress(R.string.continue_text)
-                        //TODO: Uncomment this when login works.
-                        //findNavController().navigate(LoginFragmentDirections.loginFragmentToMainFragment())
+                        findNavController().navigate(LoginFragmentDirections.loginFragmentToMainFragment())
                     }
                 }
             }
@@ -97,6 +97,10 @@ class LoginFragment : Fragment() {
                     isEnabled = true
                 }
             }
+        }
+        passwordInput.setOnEditorActionListener { _, _, _ ->
+            submitBtn.callOnClick()
+            true
         }
     }
 

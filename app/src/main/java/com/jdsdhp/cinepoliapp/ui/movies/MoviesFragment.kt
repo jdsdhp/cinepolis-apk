@@ -26,17 +26,17 @@ class MoviesFragment : Fragment() {
     private val viewModel: MoviesViewModel by viewModels()
     private var _binding: FragmentMoviesBinding? = null
 
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
         initUI()
         subscribeUI()
-        return binding.root
+        return binding?.root
     }
 
     override fun onDestroyView() {
@@ -48,10 +48,10 @@ class MoviesFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.uiState.collect { uiState ->
                 when {
-                    uiState.isLoading -> binding.swipeLayout.isRefreshing = true
+                    uiState.isLoading -> binding?.swipeLayout?.isRefreshing = true
                     !uiState.errorMessage.isNullOrBlank() ->
-                        binding.swipeLayout.isRefreshing = false
-                    uiState.isLoadSuccess -> binding.swipeLayout.isRefreshing = false
+                        binding?.swipeLayout?.isRefreshing = false
+                    uiState.isLoadSuccess -> binding?.swipeLayout?.isRefreshing = false
                 }
             }
         }
@@ -60,13 +60,13 @@ class MoviesFragment : Fragment() {
         // when the list changes
         lifecycleScope.launch {
             viewModel.paginateMovies().collectLatest {
-                (binding.recyclerView.adapter as MoviesAdapter).submitData(it)
+                (binding?.recyclerView?.adapter as? MoviesAdapter)?.submitData(it)
             }
         }
     }
 
     private fun initUI() {
-        binding.run {
+        binding?.run {
             swipeLayout.setOnRefreshListener { viewModel.fetchMovies() }
             recyclerView.run {
                 setHasFixedSize(true)
