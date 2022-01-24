@@ -2,9 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/login_fragment">
+    app:startDestination="@id/main_fragment">
 
-    <fragment
+    <!--<fragment
         android:id="@+id/login_fragment"
         android:name="com.jdsdhp.cinepoliapp.ui.login.LoginFragment"
         tools:layout="@layout/fragment_login">
@@ -18,7 +18,7 @@
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
 
-    </fragment>
+    </fragment>-->
 
     <fragment
         android:id="@+id/main_fragment"

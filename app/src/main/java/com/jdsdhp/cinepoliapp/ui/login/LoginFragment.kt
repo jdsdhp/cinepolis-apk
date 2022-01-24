@@ -27,8 +27,6 @@ class LoginFragment : Fragment() {
     private val viewModel: LoginViewModel by viewModels()
     private var _binding: FragmentLoginBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -77,7 +75,8 @@ class LoginFragment : Fragment() {
                     }
                     uiState.isUserLoggedIn -> {
                         binding.submitBtn.hideProgress(R.string.continue_text)
-                        findNavController().navigate(LoginFragmentDirections.loginFragmentToMainFragment())
+                        //TODO: Uncomment this when login works.
+                        //findNavController().navigate(LoginFragmentDirections.loginFragmentToMainFragment())
                     }
                 }
             }
