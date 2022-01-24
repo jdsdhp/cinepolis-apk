@@ -19,9 +19,6 @@ Splash Screen | Login Screen | Movies Screen | Movie Detail Screen | Transaction
 :-:|:-:|:-:|:-:|:-:
 ![](art/art-01-dark.jpg) | ![](art/art-02-dark.jpg) | ![](art/art-03-dark.jpg) | ![](art/art-04-dark.jpg) | ![](art/art-05-dark.jpg)
 
-## Download
-Go to the [Releases](https://github.com/jdsdhp/cinepolis-apk/releases) to download the latest APK.
-
 ## Tech stack & Open-source libraries
 - Minimum SDK level 21
 - [Kotlin](https://kotlinlang.org/) based, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
