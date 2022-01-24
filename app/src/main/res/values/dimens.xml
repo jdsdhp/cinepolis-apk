@@ -27,5 +27,8 @@
     <dimen name="dim_filter_row_height">36dp</dimen>
     <dimen name="dim_movie_height">180dp</dimen>
     <dimen name="dim_bar_divider_size">32dp</dimen>
+    <dimen name="dim_avatar_small_size">56dp</dimen>
+    <dimen name="dim_small_icon_size">18dp</dimen>
+    <dimen name="dim_detail_icon_size">48dp</dimen>
 
 </resources>
