@@ -18,4 +18,10 @@
     <string name="card">Card</string>
     <string name="no_profile_found_error">The profile cannot be found. Please log in again.</string>
     <string name="last_name">Last Name</string>
+    <string name="share">Share</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="duration">Duration</string>
+    <string name="genre">Genre</string>
+    <string name="classification">Classification</string>
+    <string name="images">Images</string>
 </resources>

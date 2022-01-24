@@ -1,12 +1,15 @@
 package com.jdsdhp.cinepoliapp.data.database.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.jdsdhp.cinepoliapp.data.api.mappers.Route
 import com.jdsdhp.cinepoliapp.data.api.mappers.SizeType
 import com.jdsdhp.cinepoliapp.data.api.mappers.SizesRes
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "movies")
 data class Movie(
     @PrimaryKey @SerializedName("id") val id: Int,
@@ -16,7 +19,7 @@ data class Movie(
     @SerializedName("name") val name: String,
     @SerializedName("rating") val rating: String,
     @SerializedName("synopsis") val synopsis: String,
-)
+) : Parcelable
 
 fun Movie.getResourceUrl(resourceType: ResourceType, sizeType: SizeType): String? {
     val media: Media? = this.medias?.find { it.code == resourceType.code }
@@ -33,12 +36,13 @@ fun Movie.getResourceUrl(resourceType: ResourceType, sizeType: SizeType): String
     return null
 }
 
+@Parcelize
 data class Media(
     @SerializedName("code") val code: String,
     @SerializedName("resource") val resource: String,
     @SerializedName("type") val type: String,
     @SerializedName("routes") val routes: List<Route>,
-)
+) : Parcelable
 
 enum class ResourceType(val code: String) {
     POSTER("poster"),

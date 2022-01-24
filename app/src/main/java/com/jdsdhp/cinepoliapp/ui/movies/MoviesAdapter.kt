@@ -12,8 +12,11 @@ import com.jdsdhp.cinepoliapp.data.database.model.Movie
 import com.jdsdhp.cinepoliapp.data.database.model.ResourceType
 import com.jdsdhp.cinepoliapp.data.database.model.getResourceUrl
 import com.jdsdhp.cinepoliapp.databinding.ItemMovieBinding
+import com.jdsdhp.cinepoliapp.ui.util.setSafeOnClickListener
 
-class MoviesAdapter : PagingDataAdapter<Movie, MoviesAdapter.ViewHolder>(diffCallback) {
+class MoviesAdapter(
+    private val onClickCallback: (Movie) -> Unit
+) : PagingDataAdapter<Movie, MoviesAdapter.ViewHolder>(diffCallback) {
 
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<Movie>() {
@@ -36,9 +39,15 @@ class MoviesAdapter : PagingDataAdapter<Movie, MoviesAdapter.ViewHolder>(diffCal
     inner class ViewHolder(private val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            itemView.setSafeOnClickListener {
+                getItem(bindingAdapterPosition)?.let { it1 -> onClickCallback.invoke(it1) }
+            }
+        }
+
         fun bind(movie: Movie) = binding.run {
             titleView.text = movie.name
-            val imageUrl: String? = movie.getResourceUrl(ResourceType.POSTER, SizeType.SMALL)
+            val imageUrl: String? = movie.getResourceUrl(ResourceType.POSTER, SizeType.MEDIUM)
             binding.imageView.run {
                 load(imageUrl) {
                     crossfade(true)

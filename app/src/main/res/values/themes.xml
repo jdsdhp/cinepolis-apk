@@ -111,4 +111,16 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="RoundBottomImageView.Overlay" parent="">
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">@dimen/dim_corner_radius_large</item>
+        <item name="cornerSizeBottomRight">@dimen/dim_corner_radius_large</item>
+    </style>
+
+    <style name="RoundedImageView.Overlay" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dim_card_corner_radius</item>
+    </style>
+
 </resources>

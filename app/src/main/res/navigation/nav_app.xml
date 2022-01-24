@@ -23,6 +23,29 @@
     <fragment
         android:id="@+id/main_fragment"
         android:name="com.jdsdhp.cinepoliapp.ui.main.MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/main_fragment_to_movie_detail_fragment"
+            app:destination="@id/movie_detail_fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/movie_detail_fragment"
+        android:name="com.jdsdhp.cinepoliapp.ui.movies.detail.MovieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail" >
+
+        <argument
+            android:name="movie"
+            app:argType="com.jdsdhp.cinepoliapp.data.database.model.Movie"
+            app:nullable="false" />
+
+    </fragment>
 
 </navigation>
