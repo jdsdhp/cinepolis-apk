@@ -3,7 +3,7 @@ package com.jdsdhp.cinepoliapp.di
 import android.content.Context
 import com.jdsdhp.cinepoliapp.data.database.AppDatabase
 import com.jdsdhp.cinepoliapp.data.database.RoomAppDatabase
-import com.jdsdhp.cinepoliapp.data.database.dao.*
+import com.jdsdhp.cinepoliapp.data.database.dao.MovieDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,12 +21,6 @@ internal object DatabaseModule {
         RoomAppDatabase.getInstance(context)
 
     @Provides
-    internal fun provideLocationDao(database: AppDatabase): LocationDao = database.locationDao()
-
-    @Provides
     internal fun provideMovieDao(database: AppDatabase): MovieDao = database.movieDao()
-
-    @Provides
-    internal fun provideRouteDao(database: AppDatabase): RouteDao = database.routeDao()
 
 }
