@@ -1,7 +1,9 @@
 package com.jdsdhp.cinepoliapp.data.api.mappers
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class LocationRes(
     @SerializedName("address") val address: String,
     @SerializedName("city_id") val cityId: Int,
@@ -16,6 +18,7 @@ data class LocationRes(
     @SerializedName("vista_id") val vistaId: String,
 )
 
+@Keep
 data class SettingsRes(
     @SerializedName("cs_merchant_id") val csMerchantId: String,
     @SerializedName("is_special_prices") val isSpecialPrices: Boolean,

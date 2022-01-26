@@ -1,8 +1,10 @@
 package com.jdsdhp.cinepoliapp.data.store.model
 
+import androidx.annotation.Keep
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class Profile(
     @SerializedName("card_number") val cardNumber: String,
     @SerializedName("email") val email: String,

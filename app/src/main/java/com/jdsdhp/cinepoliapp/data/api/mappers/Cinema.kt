@@ -1,16 +1,19 @@
 package com.jdsdhp.cinepoliapp.data.api.mappers
 
 import android.os.Parcelable
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 import com.jdsdhp.cinepoliapp.data.database.model.Media
 import com.jdsdhp.cinepoliapp.data.database.model.Movie
 import kotlinx.parcelize.Parcelize
 
+@Keep
 data class MoviesWrapper(
     @SerializedName("movies") val movieRes: List<MovieRes>,
     @SerializedName("routes") val routeRes: List<Route>
 )
 
+@Keep
 data class MovieRes(
     @SerializedName("id") val id: Int,
     @SerializedName("categories") val categories: List<String>,
@@ -33,12 +36,14 @@ fun MovieRes.toMovie(routes: List<Route>) = Movie(
     synopsis = this.synopsis,
 )
 
+@Keep
 @Parcelize
 data class Route(
     @SerializedName("code") val code: String,
     @SerializedName("sizes") val sizesRes: SizesRes,
 ) : Parcelable
 
+@Keep
 data class MediaRes(
     @SerializedName("code") val code: String,
     @SerializedName("resource") val resource: String,
@@ -54,6 +59,7 @@ fun List<MediaRes>.toMedias(routes: List<Route>): List<Media> = this.map {
     )
 }
 
+@Keep
 @Parcelize
 data class SizesRes(
     @SerializedName("large") val large: String,

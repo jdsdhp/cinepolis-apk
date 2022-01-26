@@ -127,10 +127,3 @@
 ##----------------------------------------------------------------------------
 -keep class * extends androidx.room.RoomDatabase
 -dontwarn androidx.room.paging.**
-
-##----------------------------------------------------------------------------
-##   App
-##----------------------------------------------------------------------------
--keep class com.jdsdhp.cinepoliapp.data.database.model** { *; }
--keep class com.jdsdhp.cinepoliapp.data.api.mappers** { *; }
--keep class com.jdsdhp.cinepoliapp.data.store.model** { *; }

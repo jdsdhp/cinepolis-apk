@@ -1,5 +1,6 @@
 package com.jdsdhp.cinepoliapp.data.api
 
+import androidx.annotation.Keep
 import com.jdsdhp.cinepoliapp.data.api.mappers.LoginResponse
 import com.jdsdhp.cinepoliapp.data.api.mappers.LoyaltyBody
 import com.jdsdhp.cinepoliapp.data.api.mappers.LoyaltyResponse
@@ -8,6 +9,7 @@ import com.jdsdhp.cinepoliapp.data.store.model.Profile
 import retrofit2.Response
 import retrofit2.http.*
 
+@Keep
 internal interface RetrofitService : ApiService {
 
     @FormUrlEncoded
