@@ -1,6 +1,7 @@
 package com.jdsdhp.cinepoliapp.data.database.model
 
 import android.os.Parcelable
+import androidx.annotation.Keep
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -9,6 +10,7 @@ import com.jdsdhp.cinepoliapp.data.api.mappers.SizeType
 import com.jdsdhp.cinepoliapp.data.api.mappers.SizesRes
 import kotlinx.parcelize.Parcelize
 
+@Keep
 @Parcelize
 @Entity(tableName = "movies")
 data class Movie(

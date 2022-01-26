@@ -1,7 +1,9 @@
 package com.jdsdhp.cinepoliapp.data.api.mappers
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class Login(
     @SerializedName("client_id") val clientId: String,
     @SerializedName("client_secret") val clientSecret: String,
@@ -11,6 +13,7 @@ data class Login(
     @SerializedName("username") val username: String,
 )
 
+@Keep
 data class LoginResponse(
     @SerializedName("access_token") val accessToken: String,
     @SerializedName("as:client_id") val asClientId: String,
